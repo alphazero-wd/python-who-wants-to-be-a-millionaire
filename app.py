@@ -30,9 +30,12 @@ def display_money_earned(money_earned):
   return f'Money Earned: ${format_number(money_earned)}\n'
 
 def display_questions():
+    is_game_over = False
     money_earned = 0
     questions.sort(key=shuffle)
     for i, question in enumerate(questions):
+      if is_game_over:
+        break
       print(f'Question {i + 1}: {question.question}')
       question.choices.sort(key=shuffle)
 
@@ -47,7 +50,7 @@ def display_questions():
       if player_choice.lower() == 'leave':
         print('It\'s a safe choice to leave the game if you\'re uncertain of your answer. Good choice :)')
         print(display_money_earned(money_earned))
-        break
+        is_game_over = True
 
       # if user enters invalid input
       while player_choice not in valid_inputs:
@@ -63,7 +66,7 @@ def display_questions():
         if i == len(questions) - 1:
           print(f'You\'ve become a millionaire. Good luck in your next game :)')
           print(display_money_earned(money_earned))
-          break
+          is_game_over = True
         else:
           print(f'\nYou are correct. Let\'s move on to the next question.')
           print(display_money_earned(money_earned))
@@ -74,7 +77,7 @@ def display_questions():
           money_earned = 1000
         print(f'Oops, the correct answer is {correct_ans_choice}. {question.correct_ans}. Try again :(')
         print(display_money_earned(money_earned))
-        break
+        is_game_over = True
 
 
 def start():
