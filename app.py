@@ -55,8 +55,8 @@ class Game:
     print('Welcome to Who Wants to be a Millionaire.')
     print('To win the game, you have to overcome 15 questions.')
     print('You will earn an amount of money as you answer a question correctly.')
-    isConfirmed = input('If you answer all 15 questions correctly by typing your answer, you are a "millionaire". Are you ready to play? [y/n]: ')
-    if isConfirmed.lower() in ['yes', 'y']:
+    isConfirmed = input('If you answer all 15 questions correctly by typing your answer, you are a "millionaire". Are you ready to play? [y/n]: ').lower().strip()
+    if isConfirmed in ['yes', 'y']:
       self.display_questions()
     else: exit()
 
@@ -68,10 +68,10 @@ class Game:
       for j, choice in enumerate(question.choices):
         print(f'{player_choices[j]}. {html.unescape(choice)}')
       instructions_on_type = '/'.join(player_choices[:(4 if question.type == 'multiple' else 2)] )
-      player_choice = input(f'Choose the answer [{instructions_on_type}] or press Q to leave the game: ').upper()
+      player_choice = input(f'Choose the answer [{instructions_on_type}] or press Q to leave the game: ').upper().strip()
 
       while player_choice not in player_choices:
-        player_choice = input('That\'s not a valid choice. Please choose the answer [A/B/C/D] or press Q to leave the game: ').upper()
+        player_choice = input('That\'s not a valid choice. Please choose the answer [A/B/C/D] or press Q to leave the game: ').upper().strip()
 
       if player_choice == 'Q':
         print('It\'s a safe choice to leave the game if you\'re uncertain of your answer. Good choice :)')
