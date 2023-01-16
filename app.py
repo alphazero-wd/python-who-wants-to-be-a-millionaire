@@ -63,16 +63,16 @@ class Game:
 
   def display_questions(self):
     for i, question in enumerate(self.questions):
-      print(f'\nQuestion {i + 1} ({question.difficulty}): {html.unescape(question.question)}\n----------')
+      print(f'\nQuestion {i + 1} ({question.difficulty}, {question.category}): {html.unescape(question.question)}\n----------')
       player_choices = ['A', 'B', 'C', 'D', 'Q']
       if question.type == 'boolean': player_choices = ['A', 'B', 'Q']
       for j, choice in enumerate(question.choices):
         print(f'{player_choices[j]}. {html.unescape(choice)}')
       instructions_on_type = '/'.join(player_choices[:(4 if question.type == 'multiple' else 2)] )
-      player_choice = input(f'Choose the answer [{instructions_on_type}] or press Q to leave the game:  ').upper()
+      player_choice = input(f'Choose the answer [{instructions_on_type}] or press Q to leave the game: ').upper()
 
       while player_choice not in player_choices:
-        player_choice = input('That\'s not a valid choice. Please choose the answer [A/B/C/D] or press Q to leave the game, or H to use 50-50: ')
+        player_choice = input('That\'s not a valid choice. Please choose the answer [A/B/C/D] or press Q to leave the game: ').upper()
 
       if player_choice == 'Q':
         print('It\'s a safe choice to leave the game if you\'re uncertain of your answer. Good choice :)')
