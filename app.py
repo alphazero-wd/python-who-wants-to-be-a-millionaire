@@ -2,7 +2,6 @@ import requests
 import random
 import html
 from typing import List
-from colorama import Fore
 
 
 class Question:
