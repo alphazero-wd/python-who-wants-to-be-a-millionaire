@@ -9,11 +9,10 @@
 - A player starts the game with $0.
 - The questions will about miscellaneous subjects, and will become increasingly difficult as the player progresses.
 - If the player chooses the correct answer for a particular question, they will win an amount of money corresponding to that question.
-- If the player get one question incorrect, they will be forced to leave the game and lose a portion of their earned money.
-- If the player is uncertain about the answer for a particular question, they can also choose to leave the game early to preserve their earned money.
-- If the player successfully ace 15 questions, they will win $1,000,000 and be qualified as a millionaire.
-
-> NOTE: Helps are currently unavailable in this mini-game, we intended to implement 50:50 in the future.
+- If the player gets one question incorrect, they will be forced to leave the game and lose a portion of their earned money.
+- If the player gets stuck on a question, they can use 50:50 for that single question only to eliminate two wrong answers.
+- If the player has used 50:50 and is still uncertain about the answer for a particular question, they can also choose to leave the game early to preserve their earned money.
+- If the player successfully aces 15 questions, they will win $1,000,000 and be qualified as a "millionaire".
 
 ### How to play this game
 
