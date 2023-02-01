@@ -35,8 +35,11 @@ class Game:
     return "${:,}".format(self.bounty)
 
   def fetch_api(self):
+    """
+      Visit the documentation for the API [here](https://opentdb.com/api_config.php)
+    """
     for difficulty in ['easy', 'medium', 'hard']:
-      URL = 'https://opentdb.com/api.php?type=multiple&amount=5&difficulty=' + difficulty
+      URL = 'https://opentdb.com/api.php?category=9&type=multiple&amount=5&difficulty=' + difficulty
       res = requests.get(URL)
       results = res.json()['results']
       for question in results:
